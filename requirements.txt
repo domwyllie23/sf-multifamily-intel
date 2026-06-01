@@ -1,0 +1,9 @@
+pandas
+numpy
+scipy
+statsmodels
+matplotlib
+folium
+requests
+beautifulsoup4
+jupyterlab
