@@ -1,6 +1,6 @@
 # SF Bay Area Multifamily Investment Intelligence
 
-A data pipeline and analysis toolkit that replicates the top-of-funnel workflow of a multifamily acquisitions team — market selection, distressed deal sourcing, and price forecasting — using entirely public data sources.
+A data pipeline and analysis toolkit that replicates the top-of-funnel workflow of a multifamily acquisitions team: market selection, distressed deal sourcing, and price forecasting, using entirely public data sources.
 
 Built as a portfolio project targeting real estate acquisitions analyst roles.
 
