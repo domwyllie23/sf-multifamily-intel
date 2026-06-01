@@ -16,301 +16,67 @@
     --muted: #6b7a6b;
     --card: #13181a;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
+  header { padding: 60px 48px 40px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px; }
+  .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; font-weight: 400; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .header-meta { text-align: right; }
+  .header-meta p { font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .tag { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); margin: 2px; }
 
-  /* HEADER */
-  header {
-    padding: 60px 48px 40px;
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
-    gap: 24px;
-  }
-
-  .eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-  }
-
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(36px, 5vw, 64px);
-    line-height: 1.05;
-    font-weight: 400;
-    color: var(--text);
-  }
-
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .header-meta {
-    text-align: right;
-  }
-
-  .header-meta p {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.8;
-  }
-
-  .tag {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--muted);
-    margin: 2px;
-  }
-
-  /* STATS BAR */
-  .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .stat {
-    padding: 28px 32px;
-    border-right: 1px solid var(--border);
-  }
-
+  .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
+  .stat { padding: 28px 32px; border-right: 1px solid var(--border); }
   .stat:last-child { border-right: none; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+  .stat-label { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; letter-spacing: 0.08em; }
 
-  .stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 36px;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
+  .intro-strip { padding: 32px 48px; border-bottom: 1px solid var(--border); display: flex; gap: 48px; align-items: start; }
+  .intro-strip p { font-size: 15px; line-height: 1.7; color: #a0ada0; max-width: 680px; }
+  .methodology { min-width: 260px; }
+  .methodology-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .methodology ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .methodology li { font-size: 12px; color: var(--muted); padding-left: 14px; position: relative; }
+  .methodology li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); font-size: 10px; }
 
-  .stat-label {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.08em;
-  }
+  .section-header { padding: 32px 48px 24px; display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--border); }
+  .section-number { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; }
+  .section-desc { margin-left: auto; font-size: 13px; color: var(--muted); max-width: 360px; text-align: right; line-height: 1.6; }
 
-  /* MAIN LAYOUT */
-  main {
-    padding: 0;
-  }
+  .map-container { width: 100%; height: 600px; }
+  .map-container iframe { width: 100%; height: 100%; border: none; display: block; }
 
-  /* MAP SECTION */
-  .map-section {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-header {
-    padding: 32px 48px 24px;
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-number {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-  }
-
-  .section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    font-weight: 400;
-  }
-
-  .section-desc {
-    margin-left: auto;
-    font-size: 13px;
-    color: var(--muted);
-    max-width: 360px;
-    text-align: right;
-    line-height: 1.6;
-  }
-
-  .map-container {
-    width: 100%;
-    height: 600px;
-    position: relative;
-  }
-
-  .map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-  }
-
-  /* CHARTS GRID */
-  .charts-section {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .charts-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .chart-card {
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 32px;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s;
-  }
-
+  .charts-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+  .chart-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px; transition: background 0.3s; }
   .chart-card:nth-child(even) { border-right: none; }
-  .chart-card:nth-last-child(-n+2) { border-bottom: none; }
+  .chart-card:hover { background: var(--card); }
 
-  .chart-card:hover {
-    background: var(--card);
-  }
+  .chart-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent2); margin-bottom: 12px; }
+  .chart-title { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 8px; line-height: 1.3; }
+  .chart-insight { font-size: 13px; color: #7a8f7a; line-height: 1.65; margin-bottom: 20px; }
+  .chart-insight strong { color: var(--accent); font-weight: 500; }
+  .chart-card img { width: 100%; height: auto; display: block; border-radius: 2px; filter: saturate(0.9) brightness(0.95); transition: filter 0.3s; }
+  .chart-card:hover img { filter: saturate(1) brightness(1); }
 
-  .chart-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent2);
-    margin-bottom: 16px;
-  }
+  .full-width { grid-column: 1 / -1; border-right: none !important; }
+  .full-width img { max-width: 860px; margin: 0 auto; display: block; }
 
-  .chart-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    line-height: 1.3;
-  }
-
-  .chart-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-    filter: saturate(0.9) brightness(0.95);
-    transition: filter 0.3s;
-  }
-
-  .chart-card:hover img {
-    filter: saturate(1) brightness(1);
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 40px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--border);
-  }
-
-  footer p {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-  }
-
-  .sources {
-    display: flex;
-    gap: 16px;
-  }
-
-  .source-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 4px 8px;
-    border: 1px solid var(--border);
-  }
-
-  /* INTRO STRIP */
-  .intro-strip {
-    padding: 32px 48px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 48px;
-    align-items: start;
-  }
-
-  .intro-strip p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #a0ada0;
-    max-width: 680px;
-  }
-
-  .methodology {
-    min-width: 260px;
-  }
-
-  .methodology-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
-  }
-
-  .methodology ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .methodology li {
-    font-size: 12px;
-    color: var(--muted);
-    padding-left: 14px;
-    position: relative;
-  }
-
-  .methodology li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent2);
-    font-size: 10px;
-  }
+  footer { padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
+  footer p { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .source-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 8px; border: 1px solid var(--border); }
 
   @media (max-width: 768px) {
     header { grid-template-columns: 1fr; padding: 32px 24px; }
-    .header-meta { text-align: left; }
     .stats-bar { grid-template-columns: repeat(2, 1fr); }
     .charts-grid { grid-template-columns: 1fr; }
     .chart-card { border-right: none !important; }
     .section-header { flex-wrap: wrap; padding: 24px; }
     .section-desc { text-align: left; margin-left: 0; }
     .intro-strip { flex-direction: column; padding: 24px; }
-    footer { flex-direction: column; gap: 16px; align-items: start; padding: 24px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; }
     .map-container { height: 400px; }
   }
 </style>
@@ -325,50 +91,35 @@
   <div class="header-meta">
     <p>Data sources</p>
     <div style="margin-top:8px">
-      <span class="tag">Zillow</span>
-      <span class="tag">Redfin</span>
-      <span class="tag">Census ACS</span>
-      <span class="tag">SF Open Data</span>
+      <span class="tag">Zillow</span><span class="tag">Redfin</span><span class="tag">Census ACS</span><span class="tag">SF Open Data</span>
     </div>
     <p style="margin-top:16px">Built by Dom Wyllie · 2026</p>
   </div>
 </header>
 
 <div class="stats-bar">
-  <div class="stat">
-    <div class="stat-num">94+</div>
-    <div class="stat-label">Zip codes analyzed</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">6</div>
-    <div class="stat-label">Distress signals scored</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">5yr</div>
-    <div class="stat-label">Price history depth</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">3</div>
-    <div class="stat-label">Analysis modules</div>
-  </div>
+  <div class="stat"><div class="stat-num">274</div><div class="stat-label">Zip codes scored</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-label">Investment factors</div></div>
+  <div class="stat"><div class="stat-num">+6.5%</div><div class="stat-label">SF 12-mo forecast</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Analysis modules</div></div>
 </div>
 
 <div class="intro-strip">
-  <p>A data pipeline identifying the highest-opportunity multifamily submarkets in San Francisco — scoring zip codes by distress signals, cap rate trends, permit activity, eviction patterns, and demographic tailwinds to surface off-market acquisition targets.</p>
+  <p>A data pipeline identifying the highest-opportunity multifamily submarkets in San Francisco — scoring zip codes by distress signals, cap rate trends, permit activity, eviction patterns, and demographic tailwinds to surface off-market acquisition targets. Built on Zillow ZHVI, Redfin transaction data, Census ACS, and SF Open Data eviction records.</p>
   <div class="methodology">
-    <div class="methodology-title">Methodology</div>
+    <div class="methodology-title">Three Modules</div>
     <ul>
-      <li>Market selection scoring</li>
+      <li>Market selection scoring (274 zip codes)</li>
       <li>Distressed operator detection</li>
-      <li>12-month price forecasting</li>
+      <li>SARIMA 12-month price forecasting</li>
       <li>Eviction & Ellis Act tracking</li>
-      <li>Supply constraint analysis</li>
+      <li>Redfin market health indicators</li>
     </ul>
   </div>
 </div>
 
 <!-- MAP -->
-<div class="map-section">
+<div style="border-bottom: 1px solid var(--border)">
   <div class="section-header">
     <span class="section-number">01</span>
     <span class="section-title">Interactive Submarket Map</span>
@@ -380,10 +131,10 @@
 </div>
 
 <!-- CHARTS -->
-<div class="charts-section">
+<div>
   <div class="section-header">
     <span class="section-number">02</span>
-    <span class="section-title">Market Analysis Charts</span>
+    <span class="section-title">Market Analysis</span>
     <span class="section-desc">Distress signals, price trends, permit activity, and opportunity scoring by submarket</span>
   </div>
 
@@ -392,75 +143,86 @@
     <div class="chart-card">
       <div class="chart-label">Opportunity Scoring</div>
       <div class="chart-title">Opportunity Matrix</div>
+      <div class="chart-insight">Plots all Bay Area zip codes on two axes: <strong>distress score</strong> (motivated sellers) vs. <strong>market attractiveness</strong> (strong fundamentals). The target zone — upper right quadrant — identifies zip codes like 94117, 94129, and 94115 where operators show financial stress in structurally sound submarkets. These are the highest-priority acquisition targets.</div>
       <img src="charts/opportunity_matrix.png" alt="Opportunity Matrix" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Factor Analysis</div>
       <div class="chart-title">Factor Heatmap — Top 10 Submarkets</div>
-      <img src="charts/factor_heatmap_top10.png" alt="Factor Heatmap Top 10" loading="lazy">
+      <div class="chart-insight">Breaks down each top zip code across all 8 scoring factors. <strong>94117 (Haight-Ashbury)</strong> leads across renter %, low vacancy, and price momentum. Red cells indicate weak scores — useful for spotting single-factor risk. 94129 scores near-uniformly green, suggesting broad-based strength with limited downside.</div>
+      <img src="charts/factor_heatmap_top10.png" alt="Factor Heatmap" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Price Trends</div>
       <div class="chart-title">County Price History</div>
+      <div class="chart-insight">Bay Area home values peaked in early 2022 across all counties and corrected sharply through 2023. <strong>San Francisco and San Mateo</strong> took the deepest correction but have begun recovering. Santa Clara and Marin held value better. The 2024–2026 stabilization sets up a potential entry window before the next appreciation cycle.</div>
       <img src="charts/county_price_history.png" alt="County Price History" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Price Forecasting</div>
       <div class="chart-title">12-Month Price Forecasts</div>
+      <div class="chart-insight">SARIMA time series models forecast <strong>SF County up +6.5%</strong> over the next 12 months — the most bullish county in the region. Santa Clara is projected flat to slightly negative (-1.0%), and Alameda slightly negative (-1.2%), reflecting softer tech-sector demand. SF's recovery trajectory is the strongest signal for near-term multifamily appreciation.</div>
       <img src="charts/price_forecasts.png" alt="Price Forecasts" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Distress Signals</div>
       <div class="chart-title">Evictions by Neighborhood</div>
+      <div class="chart-insight"><strong>Tenderloin and Financial District/South Beach</strong> show the highest eviction activity — a mix of operator distress (non-payment) and owner exits (Ellis Act, OMI). Mission and Nob Hill follow closely. High eviction density signals cash-strapped operators likely to sell at a discount, especially when paired with above-average vacancy or deferred maintenance.</div>
       <img src="charts/evictions_by_neighborhood.png" alt="Evictions by Neighborhood" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Distress Signals</div>
       <div class="chart-title">Evictions Overview</div>
+      <div class="chart-insight">Citywide eviction filings surged post-COVID moratorium, peaking in 2024–2025. <strong>Nuisance and non-payment</strong> dominate current filings, indicating operator stress rather than strategic repositioning. The breakdown by reason helps distinguish motivated sellers (financial distress) from owners simply reclaiming units — a key underwriting distinction.</div>
       <img src="charts/evictions_overview.png" alt="Evictions Overview" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Regulatory Risk</div>
       <div class="chart-title">Ellis Act Withdrawals</div>
+      <div class="chart-insight">Ellis Act filings — where owners remove units from the rental market entirely — spiked in 2022–2024 before declining in 2025–2026. <strong>Sunset/Parkside and Mission</strong> lead by neighborhood. High Ellis Act activity signals owners exiting the landlord business, creating acquisition opportunities at below-replacement cost in rent-controlled submarkets.</div>
       <img src="charts/ellis_act.png" alt="Ellis Act" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Supply Analysis</div>
       <div class="chart-title">Permits Over Time</div>
+      <div class="chart-insight">Post-COVID permit activity recovered sharply, but <strong>new construction permits remain constrained</strong> relative to demand. Low permitting in core SF neighborhoods limits new supply, supporting rent growth and valuations in existing stock. Capital-constrained operators deferring maintenance in low-permit areas are particularly attractive acquisition targets.</div>
       <img src="charts/permits_over_time.png" alt="Permits Over Time" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Market Health</div>
       <div class="chart-title">Redfin Market Health</div>
+      <div class="chart-insight">Four Redfin indicators tracked across SF, San Jose, and Oakland since 2020. <strong>SF's days on market have compressed</strong> and sale-to-list ratios have recovered above 1.0, signaling renewed buyer competition. Months of supply remain low across all three markets. These transaction-level signals confirm that the price forecast recovery has real demand backing it.</div>
       <img src="charts/redfin_market_health.png" alt="Redfin Market Health" loading="lazy">
     </div>
 
     <div class="chart-card">
       <div class="chart-label">Market Overview</div>
       <div class="chart-title">County Summary</div>
+      <div class="chart-insight"><strong>San Francisco County leads all Bay Area counties</strong> on composite investment score, driven by high renter concentration, tight vacancy, and strong price momentum. The renter demand vs. price momentum scatter confirms SF as an outlier — high renter % household base with recovering prices. Marin and San Mateo score well on fundamentals but offer fewer distressed entry points.</div>
       <img src="charts/county_summary.png" alt="County Summary" loading="lazy">
     </div>
 
-    <div class="chart-card" style="grid-column: 1 / -1; border-right: none;">
+    <div class="chart-card full-width">
       <div class="chart-label">Trend Decomposition</div>
       <div class="chart-title">SF Price Decomposition</div>
-      <img src="charts/sf_decomposition.png" alt="SF Decomposition" loading="lazy" style="max-width:800px; margin: 0 auto;">
+      <div class="chart-insight" style="max-width:860px">Decomposes the SF ZHVI time series into its underlying components. The <strong>trend component</strong> (orange) shows the structural appreciation trajectory — a clear peak in 2022 and gradual recovery. The seasonal component (green) captures the consistent spring/summer price premium. Residual noise (pink) spiked around 2022's rate shock but has since normalized, suggesting the current trend signal is cleaner and more reliable for forecasting.</div>
+      <img src="charts/sf_decomposition.png" alt="SF Decomposition" loading="lazy">
     </div>
 
   </div>
 </div>
 
 <footer>
-  <p>SF Multifamily Intel · Built with Python, Jupyter, Folium · 2026</p>
-  <div class="sources">
+  <p>SF Multifamily Intel · Python · Jupyter · Folium · SARIMA · 2026</p>
+  <div style="display:flex;gap:8px">
     <span class="source-tag">Zillow ZHVI</span>
     <span class="source-tag">Redfin</span>
     <span class="source-tag">Census ACS</span>
